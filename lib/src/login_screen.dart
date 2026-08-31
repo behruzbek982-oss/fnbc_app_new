@@ -6,12 +6,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Родной фон Scaffold делаем фиолетовым для плавной стыковки с шапкой
       backgroundColor: const Color(0xFF5C2684), 
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            // 1. Верхняя фиолетовая шапка
             SliverToBoxAdapter(
               child: Container(
                 width: double.infinity,
@@ -48,13 +46,11 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            // 2. Белый контейнер, который ВСЕГДА заполняет всё оставшееся пространство до самого низа
             SliverFillRemaining(
-              hasScrollBody: false, // Позволяет контенту внутри скроллиться, если он не влезает
+              hasScrollBody: false, 
               child: Container(
                 decoration: const BoxDecoration(
-                  color: Colors.white, // Белый цвет полностью закроет низ
+                  color: Colors.white, 
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -64,7 +60,6 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 30.0),
                   child: Column(
                     children: [
-                      // Вкладки
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -86,8 +81,6 @@ class LoginScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 40),
-
-                      // Ячейки пин-кода
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(
@@ -108,8 +101,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-
-                      // Кнопка Forgot MPIN?
                       TextButton(
                         onPressed: () {},
                         child: const Text(
@@ -118,8 +109,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-
-                      // Фиолетовая кнопка Login
                       SizedBox(
                         width: double.infinity,
                         height: 55,
@@ -133,8 +122,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-
-                      // Кнопка Login with Face ID (с серой рамкой)
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -146,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.face, color: Color(0xFF5C2684)), // Временная иконка
+                            const Icon(Icons.face, color: Color(0xFF5C2684)), 
                             const SizedBox(width: 12),
                             const Text(
                               'Login with Face ID',
@@ -156,8 +143,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 30),
-
-                      // Ссылка Create an account?
                       TextButton(
                         onPressed: () {},
                         child: const Text(
